@@ -6,7 +6,7 @@ import java.util.*;
 public class Point{
 	
 	//ATTRIBUTS
-	private final Integer x , y ;
+	public Integer x , y ;
 	private static Integer compteur=0;
 	
 	//CONSTRUCTEURS
@@ -20,8 +20,19 @@ public class Point{
 	
 	
 	//METHODES
+	
+	@Override
+	public String toString() {
+		return ("("+x+","+y+")");
+	}
 	public boolean equals(Point p){
 		return (p.x.equals(this.x) && p.y.equals(this.y));
+	}
+	
+	public Point translate(Integer dx, Integer dy) {
+		x+=dx;
+		y+=dy;
+		return(new Point(x,y));
 	}
 	
 	

@@ -4,11 +4,11 @@ import java.util.*;
 import fr.dauphine.ja.pachoudalexandre.td01.Point;
 
 public class LigneBrisee{
-	private ArrayList<Point> listePoint;
+	private LinkedList<Point> listePoint;
 	private final int max;
 	
 	public LigneBrisee(int max){
-		listePoint=new ArrayList<>();
+		listePoint=new LinkedList<>();
 		this.max=max;
 	
 	}
@@ -25,16 +25,8 @@ public class LigneBrisee{
 
 	public int pointCapacity(){return this.max;}
 	public int nbPoints(){return this.listePoint.size();}
-
 	public boolean contains(Point p){
-		
-		for(Point i = listePoint){
-			if(i.equals(p)) return true;
-		}
-		 	
-		return false;
-		
-		
+		return listePoint.contains(p);
 	}
 	
 	public static void main( String[] args ){
