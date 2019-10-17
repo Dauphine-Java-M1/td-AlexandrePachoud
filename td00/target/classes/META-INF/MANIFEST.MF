@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Built-By: pachal16
+Build-Jdk: 11.0.3
+Main-Class: fr.dauphine.ja.pachoudalexandre.td00.App
+Created-By: Maven Integration for Eclipse
+
