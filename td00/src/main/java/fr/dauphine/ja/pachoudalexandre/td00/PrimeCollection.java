@@ -34,13 +34,13 @@ public class PrimeCollection{
 	 * @param n a integer
 	 * @return True if n is prime, false if not
 	 */
-	private boolean isPrime(int n) {
+	public static boolean isPrime(int n) {
 		if(n==1 || n==0) {
 			return false;
 		}
 		double max = Math.sqrt(n);
 		for(int i=2; i< max+1 ; i++) {
-			if(n%i==0)return false;
+			if(i!=n && n%i==0)return false;
 		}
 		return true;
 	}
