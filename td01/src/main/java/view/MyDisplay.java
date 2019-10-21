@@ -16,6 +16,13 @@ public class MyDisplay extends JPanel {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		MyDisplay d = new MyDisplay();
 		frame.add(d);
-		
+		frame.setBackground(Color.WHITE);
+	}
+	
+	@Override
+	public void paintComponent(Graphics g) {
+		g.setColor(Color.BLACK);
+		g.drawLine(0, 0, 500, 250);
+		g.drawRect(10, 10, 300, 100);
 	}
 }

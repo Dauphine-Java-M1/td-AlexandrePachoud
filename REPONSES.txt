@@ -1,3 +1,11 @@
 Alexandre PACHOUD
-J'ajote sur copie
 
+
+TD 02
+
+1.1)
+1.2)
+1.3)
+1.4)
+1.5) A la création d'une Frame, et dès qu'elle est redimensionnée
+1.6) Swing est une "amélioration" de awt, qui est plus simple d'utilisation.
