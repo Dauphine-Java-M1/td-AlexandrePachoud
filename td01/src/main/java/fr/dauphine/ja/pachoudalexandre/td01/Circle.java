@@ -15,7 +15,7 @@ public class Circle {
 	
 	@Override
 	public String toString() {
-		return (center.toString()+" - "+rayon);
+		return ("center:"+center.toString()+" rayon:"+rayon);
 	}
 	
 	public void translate(Integer dx, Integer dy) {
