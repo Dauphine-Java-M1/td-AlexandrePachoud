@@ -1,19 +1,38 @@
-package fr.dauphine.ja.pachoudalexandre.td01;
+package fr.dauphine.ja.pachoudalexandre.model;
 
-public class Ring extends Circle {
+import java.awt.Graphics;
+
+public class Ring extends Circle implements Drawable{
+	
+	//VARIABLES
 	private Integer rayonInterne;
 	
+	
+	
+	
+	//GET
 	public Integer getRayonInterne() {
 		return rayonInterne;
 	}
+	
+	
+	
+	//CONTSRUCTEURS
 	public Ring(Point p, Integer r,Integer r2){
 		super(p,Math.max(r, r2));
 		rayonInterne=Math.min(r, r2);
+	}
+	public Ring(int x, int y, Integer r,Integer r2){
+		this(new Point(x,y),r,r2);
 	}
 	public Ring(){
 		super();
 		rayonInterne=0;
 	}
+	
+	
+	
+	//METHODES
 	public boolean equals(Ring obj) {
 		return super.equals(obj) && this.rayonInterne.equals(obj.getRayonInterne()) ;	
 	}
@@ -22,10 +41,6 @@ public class Ring extends Circle {
 		return (super.toString() + " rayon interne:"+rayonInterne.toString());
 	}
 	
-	public static void main(String[] args) {
-		Ring ring = new Ring();
-		System.out.println(ring);
-	}
 	@Override
 	public boolean contains(Point p) {
 		Circle cercle  = new Circle(super.center,this.rayonInterne);
@@ -36,5 +51,11 @@ public class Ring extends Circle {
 			if(r.contains(p))return true;
 		}
 		return false;
+	}
+	
+	@Override
+	public void drawOn(Graphics g) {
+		super.drawOn(g);
+		new Circle(super.center,this.rayonInterne).drawOn(g);
 	}
 }

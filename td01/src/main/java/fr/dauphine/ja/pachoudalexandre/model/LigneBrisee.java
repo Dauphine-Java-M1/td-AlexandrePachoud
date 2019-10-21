@@ -1,9 +1,11 @@
-package fr.dauphine.ja.pachoudalexandre.td01;
+package fr.dauphine.ja.pachoudalexandre.model;
 
+import java.awt.Graphics;
 import java.util.*;
-import fr.dauphine.ja.pachoudalexandre.td01.Point;
 
-public class LigneBrisee{
+import fr.dauphine.ja.pachoudalexandre.model.Point;
+
+public class LigneBrisee implements Drawable {
 	private LinkedList<Point> listePoint;
 	private final int max;
 	
@@ -28,19 +30,16 @@ public class LigneBrisee{
 	public boolean contains(Point p){
 		return listePoint.contains(p);
 	}
-	
-	public static void main( String[] args ){
-	 
-	 	Point p1,p2,p3,p4;
-	 	
-		p1=new Point(1,2);
-		p2=p1;
-		p3=new Point(1,2);
-		
-		
-		
+	@Override
+	public void drawOn(Graphics g) {
+		Point p2=null;
+		for(Point p1 : this.listePoint) {
+			System.out.println(p1 +"&"+ p2);
+			if(p2!=null) {
+				g.drawLine(p1.x, p1.y, p2.x, p2.y);
+			}
+			p2=p1;
+		}
 		
 	}
-	
-	 
 }

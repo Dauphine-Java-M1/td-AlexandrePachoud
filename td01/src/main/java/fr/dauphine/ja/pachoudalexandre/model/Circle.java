@@ -1,6 +1,8 @@
-package fr.dauphine.ja.pachoudalexandre.td01;
+package fr.dauphine.ja.pachoudalexandre.model;
 
-public class Circle {
+import java.awt.Graphics;
+
+public class Circle implements Drawable {
 	Point center;
 	Integer rayon;
 	
@@ -8,6 +10,9 @@ public class Circle {
 	public Circle(Point p, Integer r) {
 		center=p;
 		rayon=r;
+	}
+	public Circle(int x, int y, int r) {
+		this(new Point(x,y), r);
 	}
 	public Circle() {
 		this(new Point(), 1);
@@ -30,6 +35,10 @@ public class Circle {
 			if(c.contains(p))return true;
 		}
 		return false;
+	}
+	@Override
+	public void drawOn(Graphics g) {
+		g.drawOval(center.x-rayon, center.y-rayon, 2*rayon, 2*rayon);
 	}
 }
 

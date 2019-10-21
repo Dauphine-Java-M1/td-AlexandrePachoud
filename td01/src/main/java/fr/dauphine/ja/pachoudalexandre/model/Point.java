@@ -1,7 +1,4 @@
-package fr.dauphine.ja.pachoudalexandre.td01;
-
-import java.util.*;
-
+package fr.dauphine.ja.pachoudalexandre.model;
 
 public class Point{
 	
